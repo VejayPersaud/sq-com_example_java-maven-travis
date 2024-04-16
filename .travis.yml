@@ -1,6 +1,11 @@
 sudo: false
 install: true
 
+dist: jammy
+
+env:
+  - JAVA_HOME=/usr/local/lib/jvm/openjdk17
+
 addons:
   sonarcloud:
     organization: "sonarcloud"
@@ -9,12 +14,12 @@ addons:
 
 script:
   # JaCoCo is used to have code coverage, "-Pcoverage" activates the maven profile in the pom.xml
-  - mvn clean verify sonar:sonar -Pcoverage 
+  - mvn clean verify sonar:sonar -Pcoverage
 
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
+    - "$HOME/.m2/repository"
+    - "$HOME/.sonar/cache"
 
 # Don't copy the following part if you're using this project as a starting point of yours
 notifications:
