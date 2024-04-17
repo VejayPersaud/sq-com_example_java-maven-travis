@@ -176,9 +176,7 @@ public class Foo {
     // httpPost("http://unsecure.example.com", data);
 }
 
-    String userInput;
-    userInput = System.console().readLine();
-    int valueA = Integer.parseInt(userInput);
+
 
 
 
