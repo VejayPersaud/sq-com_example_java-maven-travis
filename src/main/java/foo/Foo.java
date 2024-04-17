@@ -138,6 +138,25 @@ public class Foo {
         return "SELECT * FROM users WHERE user = '" + userProvidedValue + "'";
     }
 
+    // New vulnerability example: Hardcoded sensitive information
+    private static final String SECRET_KEY = "SuperSecretKey";
+
+    // Another vulnerability example: Insecure data handling with user input
+    public void logUserInput(String input) {
+        // Simulate logging user input directly without sanitization
+        System.out.println("User input was: " + input);
+        // This can lead to logging sensitive information or injection attacks
+    }
+
+    // Vulnerability: predictable pseudorandom number generator used for sensitive operations
+    public void generateToken() {
+        // Using Random instead of SecureRandom
+        Random rand = new Random();
+        long token = rand.nextLong();
+        System.out.println("Generated token: " + token);
+        // This method uses a predictable random number generator for token generation.
+    }
+
 
     
 }
