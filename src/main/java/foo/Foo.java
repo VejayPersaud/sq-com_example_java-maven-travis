@@ -157,6 +157,28 @@ public class Foo {
         // This method uses a predictable random number generator for token generation.
     }
 
+    public void readFile(String file) {
+    try {
+        // Some code to read a file
+    } catch (Exception e) {
+        e.printStackTrace(); // Vulnerability: potential information leak
+    }
+}
+
+    public void useDeprecatedMethod() {
+    // Vulnerability: use of deprecated methods can lead to security risks
+    Thread.stop(); 
+}
+
+    public void sendSensitiveData(String data) {
+    // Vulnerability: sending sensitive data over an unencrypted channel
+    // This is a simulated example of what not to do
+    // httpPost("http://unsecure.example.com", data);
+}
+
+
+
+
 
     
 }
