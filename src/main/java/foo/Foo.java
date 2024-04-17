@@ -174,6 +174,21 @@ public class Foo {
     // Vulnerability: sending sensitive data over an unencrypted channel
     // This is a simulated example of what not to do
     // httpPost("http://unsecure.example.com", data);
+
+
+
+        class ANYTHING {
+   String nonsense;
+   
+   public ANYTHING() {
+      nonsense = "goodbye world";
+   }
+}
+
+ANYTHING temp;
+while (true) {
+   temp = new ANYTHING();
+}
 }
 
 
